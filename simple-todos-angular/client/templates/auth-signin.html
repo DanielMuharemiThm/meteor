@@ -1,0 +1,57 @@
+<template name="signin">
+	<div class="page auth">
+		<nav>
+			<div class="nav-group">
+				<a href="#" class="js-menu nav-item"><span class="icon-list-unordered"></span></a>
+			</div>
+		</nav>
+
+		<div class="content-scrollable">
+			<div class="wrapper-auth">
+				<h1 class="title-auth">Sign In.</h1>
+				<p class="subtitle-auth">Signing in allows you to view private lists</p>
+
+				<div style="padding-bottom:30px;">
+					<button id="facebook-login" class="btn btn-default" style="color:blue;"> Login with Facebook</button>
+				</div>
+
+
+				<form>
+					{{#if errorMessages}}
+					<div class="list-errors">
+						{{#each errorMessages}}
+						<div class="list-item">{{this}}</div>
+						{{/each}}
+					</div>
+					{{/if}}
+
+					<div class="input-symbol {{errorClass 'email'}}">
+						<input type="email" name="email" placeholder="Your Email" />
+						<span class="icon-email" title="Your Email"></span>
+					</div>
+
+					<div class="input-symbol {{errorClass 'password'}}">
+						<input type="password" name="password" placeholder="Password" />
+						<span class="icon-lock" title="Password"></span>
+					</div>
+					
+					<div style="text-align:left;padding:10px;padding-left:20px;">
+						
+						<input type="radio" checked="checked"/> Easy Login (kostenlos)<br/>
+						<span style="font-size:9pt;margin-left:17px;">Geeignet für <b>Bedienungen</b> und als <b>Demo</b></span><br/>
+						<span style="font-size:9pt;margin-left:17px;">Verbindet sich auf einem Tablet mit <b>'Business-Account'</b></span>
+						<br/><br/>
+						<input type="radio"/> Business Account <br/>
+						<span style="font-size:9pt;margin-left:17px;">Anmeldung muss über ein <b>Tablet</b> erfolgen!</span><br/>
+						<span style="font-size:9pt;margin-left:17px;">Das Tablet als Kassensystem und Sychronisation mit anderen Smartphones</span>
+						<span style="font-size:9pt;margin-left:17px;"></span>
+					</div>
+
+					<button type="submit" class="btn-primary">Sign in</button>
+				</form>
+			</div>
+
+			<a href="{{pathFor 'join'}}" class="link-auth-alt">Need an account? Join Now.</a>
+		</div>
+	</div>
+</template>

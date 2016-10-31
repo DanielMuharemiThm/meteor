@@ -1,0 +1,8 @@
+<template name="main">
+	{{#if currentUser}} 
+		<img src="http://{{image}}" />
+		{{currentUser.services.facebook.name}}
+	<button id="logout">Logout</button>
+	{{/if}}
+	
+</template>

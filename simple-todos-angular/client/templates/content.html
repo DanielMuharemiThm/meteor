@@ -1,0 +1,17 @@
+<template name="content">
+	{{#if currentUser}}
+	<div class="btns-group-vertical">
+		<a href="#" class="js-user-menu btn-secondary" style="color:black;">
+			<!--{{name}}-->
+			{{emailLocalPart}}
+		</a>
+		<a class="js-logout btn-secondary" style="color:black;">Logout</a>
+	</div>
+   
+	{{/if}}
+    {{#each this}}
+        {{#each emails}}
+            {{address}}
+        {{/each}}
+    {{/each}}
+</template>
